@@ -25,8 +25,8 @@ main(int argc, char *argv[])
 			name = argv[1];
 		}
 
-		majornum = (int)argv[2];
-		minornum = (int)argv[3];
+		majornum = atoi(argv[2]);
+		minornum = atoi(argv[3]);
 
 		// note, this syscall will succeed as long as [name] and [majornum] are valid/unclaimed
 		// nothing ever checks the minor number
@@ -41,7 +41,7 @@ main(int argc, char *argv[])
 		exit();
 	}
 
-	printf(1,"mknod success\n");
+	printf(1,"mknod success:\nDevice: %s\nMajor Number: %d\nMinor Number: %d\n", name, majornum, minornum);
  	exit();
 
 }
